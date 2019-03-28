@@ -9,12 +9,14 @@ class Robot():
         #设置两个马达
         self.left_motor=self._mh.getMotor(1)
         self.right_motor=self._mh.getMotor(2)
-
         # recommended for auto-disabling motors on shutdown!
-        def turnOffMotors(self):
-            self.left_motor.run(MotorHAT.RELEASE)
-            self.right_motor.run(MotorHAT.RELEASE)
-
         atexit.register(self.turnOffMotors)
+
+    
+    def turnOffMotors(self):
+        self.left_motor.run(MotorHAT.RELEASE)
+        self.right_motor.run(MotorHAT.RELEASE)
+
+        
 
 
