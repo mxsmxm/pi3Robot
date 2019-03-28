@@ -22,18 +22,18 @@ rMotor=mh.getMotor(2)
 lMotor.setSpeed(150)
 rMotor.setSpeed(150)
 
-lMotor.run(MotorHAT.FORWARD)
-rMotor.run(MotorHAT.FORWARD)
+# lMotor.run(MotorHAT.FORWARD)
+# rMotor.run(MotorHAT.FORWARD)
 
-time.sleep(1)
+# time.sleep(1)
 
-lMotor.run(MotorHAT.BACKWARD)
-rMotor.run(MotorHAT.FORWARD)
-time.sleep(1)
+# lMotor.run(MotorHAT.BACKWARD)
+# rMotor.run(MotorHAT.FORWARD)
+# time.sleep(1)
 
-lMotor.run(MotorHAT.FORWARD)
-rMotor.run(MotorHAT.BACKWARD)
-time.sleep(1)
+# lMotor.run(MotorHAT.FORWARD)
+# rMotor.run(MotorHAT.BACKWARD)
+# time.sleep(1)
 
 lMotor.run(MotorHAT.BACKWARD)
 rMotor.run(MotorHAT.BACKWARD)
