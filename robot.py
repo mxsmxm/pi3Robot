@@ -54,10 +54,10 @@ class Robot:
     def stop_all(self):
         self.turnOffMotors()
         #清空所有传感器的监听回调函数
-        self.left_line_sensor.when_line=none
-        self.left_line_sensor.when_no_line=none
-        self.right_line_sensor.when_line=none
-        self.right_line_sensor.when_no_line=none
+        self.left_line_sensor.when_line=None
+        self.left_line_sensor.when_no_line=None
+        self.right_line_sensor.when_line=None
+        self.right_line_sensor.when_no_line=None
 
         
 
