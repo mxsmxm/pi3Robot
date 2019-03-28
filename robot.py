@@ -1,7 +1,8 @@
 from Adafruit_MotorHAT import Adafruit_MotorHAT as MotorHAT
+from gpiozero import LineSensor
 import atexit
 
-class Robot():
+class Robot:
     def __init__(self,mh_addr=0x60):
         #使用给定的地址设置motorHAT
         self._mh=MotorHAT(addr=mh_addr)
@@ -9,8 +10,13 @@ class Robot():
         #设置两个马达
         self.left_motor=self._mh.getMotor(1)
         self.right_motor=self._mh.getMotor(2)
+
         # recommended for auto-disabling motors on shutdown!
-        atexit.register(self.turnOffMotors)
+        atexit.register(self.stop_all)
+
+        #设置两个巡线传感器
+        self.left_line_sensor=LineSensor(23,pull_up=True)
+        self.right_line_sensor=LineSensor(16,pull_up=True)
 
     #将速度转换成0-100之间
     def speedConvert(self,speed):
@@ -44,6 +50,14 @@ class Robot():
     def turnOffMotors(self):
         self.left_motor.run(MotorHAT.RELEASE)
         self.right_motor.run(MotorHAT.RELEASE)
+
+    def stop_all(self):
+        self.turnOffMotors()
+        #清空所有传感器的监听回调函数
+        self.left_line_sensor.when_line=none
+        self.left_line_sensor.when_no_line=none
+        self.right_line_sensor.when_line=none
+        self.right_line_sensor.when_no_line=none
 
         
 
