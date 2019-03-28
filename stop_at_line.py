@@ -8,7 +8,7 @@ lsensor=LineSensor(23,pull_up=True)
 rsensor=LineSensor(16,pull_up=True)
 
 lsensor.when_line=r.turnOffMotors
-rsensor.when_line=r.turnoffMotors
+rsensor.when_line=r.turnOffMotors
 
 r.set_left(-40)
 r.set_right(-40)
