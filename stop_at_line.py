@@ -10,5 +10,8 @@ rsensor=LineSensor(16,pull_up=True)
 lsensor.when_line=r.turnOffMotors
 rsensor.when_line=r.turnoffMotors
 
+r.set_left(-40)
+r.set_right(-40)
+
 while True:
     sleep(0.02)
