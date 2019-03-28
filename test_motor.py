@@ -4,9 +4,12 @@ from time import sleep
 
 r=Robot()
 
-r.left_motor.setSpeed(100)
-r.right_motor.setSpeed(100)
-r.left_motor.run(MotorHAT.FORWARD)
-r.right_motor.run(MotorHAT.FORWARD)
+r.set_left(50)
+r.set_right(50)
 
-sleep(2)
+sleep(1)
+
+r.set_left(-50)
+r.set_right(-50)
+
+sleep(1)
