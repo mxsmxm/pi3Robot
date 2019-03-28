@@ -1,15 +1,15 @@
-from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor
+import Adafruit_MotorHAT.Adafruit_MotorHAT as MotorHAT
 
 import time
 import atexit
 
 # create a default object, no changes to I2C address or frequency
-mh = Adafruit_MotorHAT(addr=0x60)
+mh = MotorHAT(addr=0x60)
 
 # recommended for auto-disabling motors on shutdown!
 def turnOffMotors():
-    mh.getMotor(1).run(Adafruit_MotorHAT.RELEASE)
-    mh.getMotor(2).run(Adafruit_MotorHAT.RELEASE)
+    mh.getMotor(1).run(MotorHAT.RELEASE)
+    mh.getMotor(2).run(MotorHAT.RELEASE)
 
 atexit.register(turnOffMotors)
 
@@ -21,7 +21,19 @@ rMotor=mh.getMotor(2)
 lMotor.setSpeed(150)
 rMotor.setSpeed(150)
 
-lMotor.run(Adafruit_MotorHAT.FORWARD)
-rMotor.run(Adafruit_MotorHAT.FORWARD)
+lMotor.run(MotorHAT.FORWARD)
+rMotor.run(MotorHAT.FORWARD)
 
 time.sleep(1)
+
+lMotor.run(MotorHAT.BACKWARD)
+rMotor.run(MotorHAT.FORWARD)
+time.sleep(1)
+
+lMotor.run(MotorHAT.FORWARD)
+rMotor.run(MotorHAT.BACKWARD)
+time.sleep(1)
+
+lMotor.run(MotorHAT.BACKWARD)
+rMotor.run(MotorHAT.BACKWARD)
+time.sleep(2)
