@@ -15,6 +15,6 @@ class Robot():
             self.left_motor.run(MotorHAT.RELEASE)
             self.right_motor.run(MotorHAT.RELEASE)
 
-        atexit.register(turnOffMotors)
+        atexit.register(self.turnOffMotors)
 
 
