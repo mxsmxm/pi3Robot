@@ -8,14 +8,14 @@ class LineFollower:
         self.turn_speed=turn_speed
 
     def when_left_off_line(self):
-        self.robot.set_right(self.turn_speed)
+        self.robot.set_left(self.forward_speed)
     def when_right_off_line(self):
-        self.robot.set_left(self.turn_speed)
+        self.robot.set_right(self.forward_speed)
 
     def when_left_on_line(self):
-        self.robot.set_left(self.forward_speed)
+        self.robot.set_left(self.turn_speed)
     def when_right_on_line(self):
-        self.robot.set_right(self.forward_speed)
+        self.robot.set_right(self.turn_speed)
 
     def run(self):
         self.robot.left_line_sensor.when_line=self.when_left_on_line
@@ -29,6 +29,6 @@ class LineFollower:
             sleep(0.02)
 
 robot=Robot()
-line_follower=LineFollower(robot,-60,-30)
+line_follower=LineFollower(robot,-30,-10)
 line_follower.run()
     
