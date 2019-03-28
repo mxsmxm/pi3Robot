@@ -1,4 +1,5 @@
-import Adafruit_MotorHAT.Adafruit_MotorHAT as MotorHAT
+from Adafruit_MotorHAT import Adafruit_MotorHAT as MotorHAT
+#
 
 import time
 import atexit
