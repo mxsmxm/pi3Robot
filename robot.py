@@ -7,8 +7,8 @@ class Robot():
         self._mh=MotorHAT(addr=mh_addr)
 
         #设置两个马达
-        self.left_motor=self._motorHAT.getMotor(1)
-        self.right_motor=self._motorHAT.getMotor(2)
+        self.left_motor=self._mh.getMotor(1)
+        self.right_motor=self._mh.getMotor(2)
 
         # recommended for auto-disabling motors on shutdown!
         def turnOffMotors(self):
