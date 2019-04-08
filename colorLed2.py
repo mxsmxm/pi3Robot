@@ -13,6 +13,6 @@ for x in range(0,8):
 
 
 for i in range(0,N):
-    pixels[i]=[randint(0,255),randint(0,255),randint(0,255)]
+    pixels[i]=[randint(0,60),randint(0,60),randint(0,60)]
     ws2812.write2812(spi,pixels)
 time.sleep(0.1)
