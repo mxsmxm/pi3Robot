@@ -11,8 +11,8 @@ pixels=[]
 for x in range(0,8):
     pixels.append([0,0,0])
 
-
-for i in range(0,N):
-    pixels[i]=[randint(0,60),randint(0,60),randint(0,60)]
-    ws2812.write2812(spi,pixels)
-time.sleep(0.1)
+while 1:
+    for i in range(0,N):
+        pixels[i]=[randint(0,64),randint(0,10),randint(0,64)]
+        ws2812.write2812(spi,pixels)
+    time.sleep(0.1)
