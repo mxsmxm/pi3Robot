@@ -1,6 +1,6 @@
 import spidev
 import ws2812
-from random import import randint
+from random import  randint
 import time
 
 spi=spidev.SpiDev()
