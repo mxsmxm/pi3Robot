@@ -15,4 +15,4 @@ while 1:
     for i in range(0,N):
         pixels[i]=[randint(0,255),randint(0,255),randint(0,255)]
         ws2812.write2812(spi,pixels)
-        time.sleep(1)
+    time.sleep(0.1)
