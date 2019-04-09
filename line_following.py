@@ -46,6 +46,6 @@ class LineFollower:
             sleep(0.02)
 
 robot=Robot()
-line_follower=LineFollower(robot,30,20)
+line_follower=LineFollower(robot,30,-30)
 line_follower.run()
     
