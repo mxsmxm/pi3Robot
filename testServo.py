@@ -4,7 +4,7 @@ import atexit
 pwm=PWM(0x60)
 
 pwm_frequency=60
-pwm.setPWMFrequency(pwm_frequency)
+pwm.setPWMFreq(pwm_frequency)
 
 period_in_ms=1000/pwm_frequency
 pulse_steps=4096
