@@ -35,10 +35,10 @@ class LineFollower:
         self.robot.leds.show()
 
     def run(self):
-        self.robot.left_line_sensor.when_line=self.when_left_on_line
-        self.robot.left_line_sensor.when_no_line=self.when_left_off_line
-        self.robot.right_line_sensor.when_line=self.when_right_on_line
-        self.robot.right_line_sensor.when_no_line=self.when_right_off_line
+        self.robot.left_line_sensor.when_line=self.when_left_off_line
+        self.robot.left_line_sensor.when_no_line=self.when_left_on_line
+        self.robot.right_line_sensor.when_line=self.when_right_off_line
+        self.robot.right_line_sensor.when_no_line=self.when_right_on_line
         #开始驱动
         self.robot.set_left(self.forward_speed)
         self.robot.set_right(self.forward_speed)
@@ -46,6 +46,6 @@ class LineFollower:
             sleep(0.02)
 
 robot=Robot()
-line_follower=LineFollower(robot,30,-30)
+line_follower=LineFollower(robot,30,10)
 line_follower.run()
     
