@@ -27,5 +27,4 @@ atexit.register(stop)
 while 1:
     position=int(input("请输入角度（-90 ~ 90 0是中间）:"))
     end_step=convert_degrees_to_pwm(position)
-    PWM.setPWM(0,0,90)
-    PWM.setPWM(0,0,60)
+    PWM.setPWM(0,0,0,end_step)
