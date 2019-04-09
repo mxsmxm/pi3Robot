@@ -30,8 +30,8 @@ class Robot:
         atexit.register(self.stop_all)
 
         #设置两个巡线传感器
-        self.left_line_sensor=LineSensor(23,pull_up=True)
-        self.right_line_sensor=LineSensor(16,pull_up=True)
+        #self.left_line_sensor=LineSensor(23,pull_up=True)
+        #self.right_line_sensor=LineSensor(16,pull_up=True)
 
         #设置全彩LED
         self.leds=neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.2, auto_write=False,
@@ -73,10 +73,10 @@ class Robot:
     def stop_all(self):
         self.turnOffMotors()
         #清空所有传感器的监听回调函数
-        self.left_line_sensor.when_line=None
-        self.left_line_sensor.when_no_line=None
-        self.right_line_sensor.when_line=None
-        self.right_line_sensor.when_no_line=None
+        # self.left_line_sensor.when_line=None
+        # self.left_line_sensor.when_no_line=None
+        # self.right_line_sensor.when_line=None
+        # self.right_line_sensor.when_no_line=None
         #熄灭全彩LED
         self.leds.fill((0,0,0))
         self.leds.show()
