@@ -1,10 +1,12 @@
-from gpiozero import LED
+from gpiozero import LED,LineSensor
 from time import sleep
 
 red = LED(17)
+lsensor=LineSensor(23)
+rsensor=LineSensor(16)
+
+lsensor.when_line= lambda: red.on()
+rsensor.when_line= lambda:red.off()
 
 while True:
-    red.on()
-    sleep(1)
-    red.off()
-    sleep(1)
+    sleep(0.02)
