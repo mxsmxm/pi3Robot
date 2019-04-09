@@ -4,8 +4,8 @@ from gpiozero import LineSensor
 
 r=Robot()
 
-lsensor=LineSensor(23,pull_up=True)
-rsensor=LineSensor(16,pull_up=True)
+lsensor=LineSensor(23)
+rsensor=LineSensor(16)
 
 lsensor.when_line=r.turnOffMotors
 rsensor.when_line=r.turnOffMotors
