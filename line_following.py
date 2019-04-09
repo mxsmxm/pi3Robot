@@ -30,7 +30,7 @@ class LineFollower:
         self.robot.leds.show()
     def when_right_on_line(self):
         self.robot.set_right(self.turn_speed)
-        for i in self.rigt_indicator:
+        for i in self.right_indicator:
             self.robot.leds[i]=on_line_color
         self.robot.leds.show()
 
